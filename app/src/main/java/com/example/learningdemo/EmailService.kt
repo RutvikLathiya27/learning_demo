@@ -1,10 +1,20 @@
 package com.example.learningdemo
 
 import android.util.Log
+import javax.inject.Inject
 
-class EmailService {
+interface NotificationService{
+    fun send(email : String, from: String , message: String)
+}
 
-    fun send(email : String, from: String , message: String){
-        Log.e("RTK_EMAIL_SERVICE", "User register successfully")
+class EmailService @Inject constructor() : NotificationService {
+    override fun send(email : String, from: String , message: String){
+        Log.e("RTK_EMAIL_SERVICE", "User register successfully Email")
+    }
+}
+
+class MessageService @Inject constructor() : NotificationService {
+    override fun send(email : String, from: String , message: String){
+        Log.e("RTK_EMAIL_SERVICE", "User register successfully Message")
     }
 }
