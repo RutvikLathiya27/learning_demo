@@ -13,7 +13,7 @@ class EmailService @Inject constructor() : NotificationService {
     }
 }
 
-class MessageService @Inject constructor() : NotificationService {
+class MessageService  : NotificationService {
     override fun send(email : String, from: String , message: String){
         Log.e("RTK_EMAIL_SERVICE", "User register successfully Message")
     }
